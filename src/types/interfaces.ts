@@ -53,13 +53,6 @@ export interface BaseMovieProps {
     movies: BaseMovieProps[];
     action: (m: BaseMovieProps) => React.ReactNode;
   }
-  
-  
-  export interface Review{
-    id: string;
-    content: string
-    author: string
-  }
 
   export type FilterOption = "title" | "genre";
 
@@ -75,4 +68,12 @@ export interface BaseMovieProps {
     total_pages: number;
     total_results: number;
     results: BaseMovieProps[];
+  }
+
+  export interface Review {
+    author: string,
+    content: string,
+    agree: boolean,
+    rating: number,
+    movieId: number,
   }
