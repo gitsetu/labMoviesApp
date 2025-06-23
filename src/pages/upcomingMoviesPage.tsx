@@ -13,7 +13,6 @@ import { useQuery } from "react-query";
 import Spinner from "../components/spinner";
 import AddToPlaylistIcon from '../components/cardIcons/playlistAdd'
 
-
 const titleFiltering = {
   name: "title",
   value: "",
