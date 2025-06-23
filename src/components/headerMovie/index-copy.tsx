@@ -6,10 +6,6 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import HomeIcon from "@mui/icons-material/Home";
 import { MovieDetailsProps } from "../../types/interfaces"; 
-import { BaseMovieProps } from "../../types/interfaces";
-import Avatar from "@mui/material/Avatar";
-import CardHeader from "@mui/material/CardHeader";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const styles = {
     root: {  
@@ -19,36 +15,15 @@ const styles = {
     flexWrap: "wrap",
     padding: 1.5,
   },
-  avatar: {
-    backgroundColor: "rgb(255, 0, 0)",
-  },
 };
 
 const MovieHeader: React.FC<MovieDetailsProps> = (movie) => {
-
-  // Get movies from local storage.
-  const favouriteMovies = JSON.parse(localStorage.getItem("favourites") || '[]');
-
-  const isFavourite = favouriteMovies.some(favouriteMovie => favouriteMovie.id === movie.id);
-
-  console.log(isFavourite)
-  console.log(movie.id)
+  
   return (
     <Paper component="div" sx={styles.root}>
       <IconButton aria-label="go back">
         <ArrowBackIcon color="primary" fontSize="large" />
       </IconButton>
-
-      <CardHeader
-        avatar={
-          isFavourite ? (
-            <Avatar sx={styles.avatar}>
-              <FavoriteIcon />
-            </Avatar>
-          ) : null
-        }
-      />
-
       <Typography variant="h4" component="h3">
         {movie.title}{"   "}
         <a href={movie.homepage}>
